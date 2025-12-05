@@ -11,13 +11,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
 public class MainController implements Initializable {
-
-    @FXML
-    private AnchorPane contentPane;
 
     private static final java.util.logging.Logger LOGGER =
             java.util.logging.Logger.getLogger(MainController.class.getName());
@@ -27,16 +25,16 @@ public class MainController implements Initializable {
 
     }
     @FXML
-    private void showFindPage(ActionEvent event) throws IOException {
+    private void showFindPage(ActionEvent event) {
         switchScence(event,"/fxml/FindSongs.fxml");
     }
     @FXML
-    private void showFavPage(ActionEvent event) throws IOException {
+    private void showFavPage(ActionEvent event){
         switchScence(event,"/fxml/MyFavSongs.fxml");
     }
     private void switchScence(ActionEvent event,String fxml) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(fxml));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
             Stage stage = (Stage) ((Node) event.getSource())
                     .getScene().getWindow();
             stage.setScene(new Scene(root));

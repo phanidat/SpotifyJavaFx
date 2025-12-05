@@ -17,8 +17,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.ResourceBundle;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.logging.Level;
 
 public class FindSongsController implements Initializable {
@@ -124,9 +124,9 @@ public class FindSongsController implements Initializable {
     }
 
     private void insertSong(Song song){
-        String id = song.getId().replace("'", "''");;
-        String songName = song.getSongName().replace("'", "''");;
-        String artistName = song.getArtistName().replace("'", "''");;
+        String id = song.getId().replace("'", "''");
+        String songName = song.getSongName().replace("'", "''");
+        String artistName = song.getArtistName().replace("'", "''");
         String sql = "INSERT INTO songs (id, songName, artistName) VALUES (" +
                 "'" + id + "', " +
                 "'" + songName + "', " +
@@ -140,7 +140,7 @@ public class FindSongsController implements Initializable {
         String sql = "SELECT s.id, s.songName,s.artistName,(f.id IS NOT NULL) AS isFav FROM songs as s left join favSongs as f on s.id = f.id;";
         try( Connection conn = getConnection();
             Statement st =  conn.createStatement();
-            ResultSet rs = st.executeQuery(sql);)
+            ResultSet rs = st.executeQuery(sql))
         {
             while(rs.next()){
                 String id = rs.getString("id");
@@ -208,7 +208,7 @@ public class FindSongsController implements Initializable {
     @FXML
     public void goBack(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/Main.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/Main.fxml")));
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
