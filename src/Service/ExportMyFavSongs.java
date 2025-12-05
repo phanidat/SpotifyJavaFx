@@ -5,12 +5,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.sql.ResultSet;
+import java.util.logging.Level;
 
 public class ExportMyFavSongs {
     public ExportMyFavSongs(ResultSet rs){
         exportMyFavSongs(rs);
 
     }
+    private static final java.util.logging.Logger LOGGER =
+            java.util.logging.Logger.getLogger(ExportMyFavSongs.class.getName());
+
     private void exportMyFavSongs(ResultSet rs){
         File outFile = new File("/Users/phanidatana/2603275-2025-assignment-2/my_favorite_artists.csv");
 
@@ -28,10 +32,8 @@ public class ExportMyFavSongs {
                 out.println("\"" + safeArtist + "\"," + favCount);
             }
 
-            System.out.println("Export success → " + outFile.getAbsolutePath());
-
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, e.getMessage(), e);
         }
 
     }
