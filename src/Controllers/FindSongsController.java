@@ -44,7 +44,7 @@ public class FindSongsController implements Initializable {
         btnFav.setManaged(false);
         ObservableList<Song> songList = showSong();
         listSong.setItems(songList);
-        listSong.setCellFactory(listView -> new ListCell<>() {
+        listSong.setCellFactory(_ -> new ListCell<>() {
             @Override
             protected void updateItem(Song song, boolean empty) {
                 super.updateItem(song, empty);
@@ -60,12 +60,13 @@ public class FindSongsController implements Initializable {
             }
         });
 
-        listSong.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+        listSong.getSelectionModel().selectedItemProperty().addListener((_, _, newValue) -> {
             showSongDetail(newValue);
         });
 
     }
 
+    @SuppressWarnings()
     private void fetchSongFromSpotify(){
         try {
             ArrayList<Song> songs = SpotifyGetSong.getSongFromTrack();
@@ -73,8 +74,6 @@ public class FindSongsController implements Initializable {
                 insertSong(song);
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 

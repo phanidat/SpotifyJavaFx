@@ -115,12 +115,12 @@ public class MyFavSongsController implements Initializable {
 
         MyFavTable.setEditable(true);
 
-        delete.setCellFactory(col -> new TableCell<>() {
+        delete.setCellFactory(_-> new TableCell<>() {
             private final Button btn = new Button("Remove");
 
             {
                 btn.getStyleClass().add("btn-remove");
-                btn.setOnAction(e -> {
+                btn.setOnAction(_ -> {
                     FavSong fav = getTableView().getItems().get(getIndex());
                     removeFromFav(fav);
                     getTableView().getItems().remove(fav);
