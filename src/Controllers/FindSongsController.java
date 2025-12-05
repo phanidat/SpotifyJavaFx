@@ -19,6 +19,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import java.util.logging.Level;
 
 public class FindSongsController implements Initializable {
 
@@ -31,6 +32,9 @@ public class FindSongsController implements Initializable {
     @FXML
     private Button btnFav;
     private Song selectedSong;
+    private static final java.util.logging.Logger LOGGER =
+            java.util.logging.Logger.getLogger(FindSongsController.class.getName());
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
@@ -81,8 +85,8 @@ public class FindSongsController implements Initializable {
         try{
             conn = DriverManager.getConnection("jdbc:sqlite:identifier.favSongDB");
             return conn;
-        }catch(Exception ex){
-            System.out.println("Error: " + ex.getMessage());
+        }catch(Exception e){
+            LOGGER.log(Level.SEVERE, "Error message", e);
             return null;
         }
     }
@@ -93,8 +97,9 @@ public class FindSongsController implements Initializable {
         try{
             st = conn.createStatement();
             st.executeUpdate(query);
-        }catch(Exception ex){
-            ex.printStackTrace();
+        }catch(Exception e){
+            LOGGER.log(Level.SEVERE, "Error message", e);
+
         }
     }
     private void createSongTable(){
@@ -208,7 +213,7 @@ public class FindSongsController implements Initializable {
             stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error message", e);
         }
     }
 

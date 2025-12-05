@@ -12,11 +12,16 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 public class MainController implements Initializable {
 
     @FXML
     private AnchorPane contentPane;
+
+    private static final java.util.logging.Logger LOGGER =
+            java.util.logging.Logger.getLogger(MainController.class.getName());
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -36,7 +41,7 @@ public class MainController implements Initializable {
                     .getScene().getWindow();
             stage.setScene(new Scene(root));
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error message", e);
         }
   }
 }

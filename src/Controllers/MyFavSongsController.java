@@ -25,6 +25,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Objects;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
 
 
 public class MyFavSongsController implements Initializable {
@@ -40,6 +41,9 @@ public class MyFavSongsController implements Initializable {
     private TableColumn<FavSong, Void> delete;
     @FXML
     private TableColumn<FavSong, String> comment;
+
+    private static final java.util.logging.Logger LOGGER =
+            java.util.logging.Logger.getLogger(MyFavSongsController.class.getName());
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         showFavSongs();
@@ -52,8 +56,8 @@ public class MyFavSongsController implements Initializable {
         try{
             conn = DriverManager.getConnection("jdbc:sqlite:identifier.favSongDB");
             return conn;
-        }catch(Exception ex){
-            System.out.println("Error: " + ex.getMessage());
+        }catch(Exception e){
+            LOGGER.log(Level.SEVERE, "Error message", e);
             return null;
         }
     }
@@ -64,8 +68,8 @@ public class MyFavSongsController implements Initializable {
         try{
             st = conn.createStatement();
             st.executeUpdate(query);
-        }catch(Exception ex){
-            ex.printStackTrace();
+        }catch(Exception e){
+            LOGGER.log(Level.SEVERE, "Error message", e);
         }
     }
 
@@ -154,7 +158,7 @@ public class MyFavSongsController implements Initializable {
             stage.setScene(new Scene(root));
             stage.show();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "Error message", e);
         }
     }
     @FXML
@@ -166,8 +170,8 @@ public class MyFavSongsController implements Initializable {
 
             new ExportMyFavSongs(rs);
 
-        } catch (Exception ex) {
-            System.out.println("Error: " + ex.getMessage());
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "Error message", e);
         }
     }
 }
