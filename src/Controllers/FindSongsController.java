@@ -73,7 +73,7 @@ public class FindSongsController implements Initializable {
             for (Song song : songs) {
                 insertSong(song);
             }
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
 
