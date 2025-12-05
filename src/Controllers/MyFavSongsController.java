@@ -75,7 +75,7 @@ public class MyFavSongsController implements Initializable {
 
     private ObservableList<FavSong> loadFavSongs() {
         ObservableList<FavSong> favSongs = FXCollections.observableArrayList();
-        String sql = "SELECT id,songName,artistName,comment,DATE(favDate) as favdate FROM favSongs";
+        String sql = "SELECT id,songName,artistName,comment,DATE(favDate, '+7 hours') as favdate FROM favSongs";
         try (Connection conn = getConnection();
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql))
