@@ -111,7 +111,7 @@ public class MyFavSongsController implements Initializable {
 
         MyFavTable.setEditable(true);
 
-        delete.setCellFactory(col -> new TableCell<FavSong, Void>() {
+        delete.setCellFactory(col -> new TableCell<>() {
             private final Button btn = new Button("Remove");
 
             {
