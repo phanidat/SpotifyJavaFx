@@ -115,6 +115,7 @@ public class MyFavSongsController implements Initializable {
             private final Button btn = new Button("Remove");
 
             {
+                btn.getStyleClass().add("btn-remove");
                 btn.setOnAction(e -> {
                     FavSong fav = getTableView().getItems().get(getIndex());
                     removeFromFav(fav);
@@ -157,7 +158,7 @@ public class MyFavSongsController implements Initializable {
         }
     }
     @FXML
-    public void Export(ActionEvent actionEvent) {
+    public void Export() {
         String sql = "SELECT artistName,count(*) as FavCount FROM favSongs GROUP BY artistName ORDER BY FavCount DESC;";
         try (Connection conn = getConnection();
              Statement st = conn.createStatement();

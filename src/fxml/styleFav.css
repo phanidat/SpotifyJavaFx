@@ -1,0 +1,70 @@
+.table-view {
+    -fx-background-color: #d4bff3;
+    -fx-padding: 10;
+    -fx-border-color: transparent;
+
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #d4bff3;
+}
+
+.table-view .column-header, .table-view .column-header .label {
+    -fx-text-fill: #05080a;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.table-row-cell {
+
+    -fx-text-fill: #05080a;
+    -fx-font-size: 13px;
+    -fx-padding: 6 8 6 8;
+}
+
+
+.table-view .filler {
+    -fx-background-color: #d4bff3;
+}
+
+.btn-remove {
+    -fx-background-color: #fa7878;
+    -fx-text-fill: white;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 6;
+    -fx-font-size: 12px;
+}
+
+.btn-remove:hover {
+    -fx-background-color: #ec5050;
+}
+
+.btn-remove:pressed {
+    -fx-background-color: #f33a3a;
+}
+
+.btn-back {
+    -fx-background-color: #74788c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
+.btn-back:hover {
+    -fx-background-color: #4c505e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
+.btn-export {
+    -fx-background-color: #c9a0d6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
+.btn-export :hover {
+    -fx-background-color: #765780;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
+

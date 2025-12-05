@@ -3,17 +3,30 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="300" prefWidth="400" xmlns="http://javafx.com/javafx"
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<BorderPane prefHeight="400" prefWidth="450" xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.MainController">
+            fx:controller="Controllers.MainController"
+            stylesheets="/fxml/styleMain.css">
 
     <center>
-            <HBox spacing="20" alignment="CENTER"  >
-                <Button text="Find" onAction="#showFindPage"/>
-                <Button text="Fav" onAction="#showFavPage"/>
-            </HBox>
-
+            <VBox spacing="20" alignment="CENTER">
+                <Label text="What's your Favorite Song?" styleClass="main-title"/>
+                <Button text="Find New Songs" onAction="#showFindPage" styleClass="icon-btn">
+                <graphic>
+                    <ImageView fitWidth="24" fitHeight="24">
+                            <Image url="@../Resources/music-note.png"/>
+                    </ImageView>
+                </graphic>
+                </Button>
+                <Button text="My Favorite Songs" onAction="#showFavPage" styleClass="icon2-btn">
+                    <graphic>
+                        <ImageView fitWidth="24" fitHeight="24">
+                                <Image url="@../Resources/like.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </VBox>
     </center>
-
-
 </BorderPane>

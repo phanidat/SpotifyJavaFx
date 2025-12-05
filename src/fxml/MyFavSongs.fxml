@@ -3,18 +3,22 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MyFavSongsController">
-    <TableView fx:id="MyFavTable">
+<VBox  prefHeight="400" prefWidth="450"
+        xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controllers.MyFavSongsController"
+      stylesheets="/fxml/styleFav.css">
+    <TableView fx:id="MyFavTable" styleClass="table-view">
         <columns>
-            <TableColumn fx:id="nameSong" text="Title"/>
-            <TableColumn fx:id="artistName" text="Artist"/>
-            <TableColumn fx:id="date" text="Favorite Date"/>
-            <TableColumn fx:id="comment" text="Vibe"/>
-            <TableColumn fx:id="delete" text="Delete"/>
+            <TableColumn fx:id="nameSong" text="Title" styleClass="column-header"/>
+            <TableColumn fx:id="artistName" text="Artist" styleClass="column-header"/>
+            <TableColumn fx:id="date" text="Favorite Date" styleClass="column-header"/>
+            <TableColumn fx:id="comment" text="Vibe" styleClass="column-header"/>
+            <TableColumn fx:id="delete" text="Delete" styleClass="column-header"/>
         </columns>
     </TableView>
-    <HBox>
-        <Button fx:id="btnBack" onAction="#Back" text="Back"/>
-        <Button fx:id="btnExportFav" onAction="#Export" text="Export Favorite Artists"></Button>
+    <HBox alignment="CENTER"  spacing="20" style="-fx-padding: 10 0 10 0;">
+        <Button styleClass="btn-back" onAction="#Back" text="Back"/>
+        <Button styleClass="btn-export" onAction="#Export" text="Export Ranking"/>
     </HBox>
 </VBox>

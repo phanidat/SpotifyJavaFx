@@ -1,0 +1,46 @@
+#btnFav {
+    -fx-background-color: #ff99cc;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+#btnFav:hover {
+    -fx-background-color: #fb5cb1;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.btn-back {
+    -fx-background-color: #74788c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
+
+.list-view {
+    -fx-padding: 10;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #05080a;
+    -fx-font-size: 14px;
+    -fx-padding: 8 12 8 12;
+}
+
+.list-cell:hover {
+    -fx-background-color: #4682c5;
+}
+
+.list-cell:selected {
+    -fx-background-color: #1d5695;
+    -fx-text-fill: white;
+}
+
+
+.list-cell:odd:filled {
+    -fx-background-color: #e1e3a6;
+}
+
+.list-cell:even:filled {
+    -fx-background-color: #c0d6a0;
+}
+
