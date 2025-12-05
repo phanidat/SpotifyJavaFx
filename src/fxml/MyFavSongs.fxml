@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MyFavSongsController">
+    <TableView fx:id="MyFavTable">
+        <columns>
+            <TableColumn fx:id="nameSong" text="Title"/>
+            <TableColumn fx:id="artistName" text="Artist"/>
+            <TableColumn fx:id="date" text="Favorite Date"/>
+            <TableColumn fx:id="comment" text="Vibe"/>
+            <TableColumn fx:id="delete" text="Delete"/>
+        </columns>
+    </TableView>
+    <HBox>
+        <Button fx:id="btnBack" onAction="#Back" text="Back"/>
+        <Button fx:id="btnExportFav" onAction="#Export" text="Export Favorite Artists"></Button>
+    </HBox>
+</VBox>

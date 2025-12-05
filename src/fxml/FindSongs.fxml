@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<SplitPane dividerPositions="0.5" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.FindSongsController">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="200">
+        <ListView fx:id="listSong"
+                  AnchorPane.topAnchor="40"
+                  AnchorPane.leftAnchor="0"
+                  AnchorPane.rightAnchor="0"
+                  AnchorPane.bottomAnchor="0"/>
+        <Button text="Back" onAction="#goBack"
+                layoutX="10" layoutY="10"/>
+       </AnchorPane>
+       <VBox spacing="15" alignment="CENTER" style="-fx-padding: 20;">
+        <Label fx:id="SongName"/>
+        <Label fx:id="ArtistName"/>
+        <Button fx:id="btnFav" text="Fav" onAction="#OnfavClick"/>
+      </VBox>
+
+</SplitPane>
+

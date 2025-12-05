@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="300" prefWidth="400" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controllers.MainController">
+
+    <center>
+            <HBox spacing="20" alignment="CENTER"  >
+                <Button text="Find" onAction="#showFindPage"/>
+                <Button text="Fav" onAction="#showFavPage"/>
+            </HBox>
+
+    </center>
+
+
+</BorderPane>
