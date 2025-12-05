@@ -60,9 +60,8 @@ public class FindSongsController implements Initializable {
             }
         });
 
-        listSong.getSelectionModel().selectedItemProperty().addListener((_, _, newValue) -> {
-            showSongDetail(newValue);
-        });
+        listSong.getSelectionModel().selectedItemProperty().addListener(
+                (_, _, newValue) -> showSongDetail(newValue));
 
     }
 
