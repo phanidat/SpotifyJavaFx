@@ -66,7 +66,7 @@ public class FindSongsController implements Initializable {
 
     }
 
-    @SuppressWarnings()
+    @SuppressWarnings("unused")
     private void fetchSongFromSpotify(){
         try {
             ArrayList<Song> songs = SpotifyGetSong.getSongFromTrack();
